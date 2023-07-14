@@ -6,7 +6,6 @@ import { useParams } from 'react-router';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-
 type QuizParams = {
     id: string;
   };
@@ -33,19 +32,20 @@ const Detail: React.FC = () => {
                 <div className='flex flex-col gap-3'>
                     <div>
                     <Swiper
-      // install Swiper modules
+                    style={{ "--swiper-pagination-color": "#000",  }}
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     spaceBetween={10}
                     slidesPerView={1}
                     scrollbar={{ draggable: true, hide: true, enabled:false, }}
-                    pagination={{clickable: true, }}
+                    pagination={{clickable: true, bulletElement: ''}}
                     onSwiper={(swiper) => console.log(swiper)}
                     onSlideChange={() => console.log('slide change')}
+                    className=''
                 >
                     
                     {
                         data.image1 ? <SwiperSlide>
-                        <img src={data.image1} className='hover:object-contain ease-in duration-500 rounded-xl w-full h-[200px] object-cover' alt="" />
+                        <img src={data.image1} className='hover:object-contain ease-in duration-500 rounded-xl w-full h-[200px] object-cover mb-7' alt="" />
                         </SwiperSlide> : ''
                     }
                     {
