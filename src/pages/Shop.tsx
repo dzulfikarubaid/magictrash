@@ -30,7 +30,7 @@ function Shop(){
         </IonHeader>
         <IonContent className='ion-padding'>
         <IonSearchbar animated={true} showCancelButton="focus" placeholder='Cari Sesuatu' class="custom"></IonSearchbar>
-        <div className='flex flex-wrap gap-5 justify-center mt-3'>
+        <div className='flex flex-wrap justify-between mt-3'>
         {
             data.map((item:any)=>{
                 return(
