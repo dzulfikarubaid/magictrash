@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 function Start() {
     const [data, setData] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:8000/list/').then((res) => {
+        axios.get('https://magictrash-api.vercel.app/list/').then((res) => {
             setData(res.data)
         })
     },[])
@@ -81,7 +81,7 @@ function Start() {
                             return (
                                 <SwiperSlide key={item.id}>
                                 <Link to={`/product/${item.id}`} className='flex flex-col gap-2 mb-6'>
-                                    <img className='rounded-xl w-[150px] h-[150px] object-cover' src={`http://localhost:8000${item.image1}`} alt="" />
+                                    <img className='rounded-xl w-[150px] h-[150px] object-cover' src={item.image1} alt="" />
                                     <h1 className='text-[10px] font-semibold'>{item.title}</h1>
                                    
                                     {/* <h1 className='text-sm'>{item.harga_asli}</h1> */}

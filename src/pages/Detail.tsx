@@ -15,7 +15,7 @@ const Detail: React.FC = () => {
     const {id} = useParams<QuizParams>();
     const [data, setData] = useState<any>([])
     useEffect(() => {
-        axios.get(`http://localhost:8000/${id}/`).then((res) => {
+        axios.get(`https://magictrash-api.vercel.app/${id}/`).then((res) => {
             setData(res.data)
         })
     },[id])
