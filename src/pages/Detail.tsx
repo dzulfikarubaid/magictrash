@@ -1,4 +1,4 @@
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonRefresher, IonRefresherContent, IonTitle, IonToolbar, RefresherEventDetail } from '@ionic/react';
 import axios from 'axios';
 import { logoWhatsapp, personCircleOutline, personOutline } from 'ionicons/icons';
 import React, { useEffect, useState } from 'react';
@@ -13,6 +13,12 @@ type QuizParams = {
 const Detail: React.FC = () => {
     const {id} = useParams<QuizParams>();
     const [data, setData] = useState<any>([])
+    function handleRefresh(event: CustomEvent<RefresherEventDetail>) {
+        setTimeout(() => {
+          // Any calls to load data go here
+          event.detail.complete();
+        }, 2000);
+      }
     useEffect(() => {
         axios.get(`https://magictrash-api.vercel.app/${id}/`).then((res) => {
             setData(res.data)
@@ -29,15 +35,18 @@ const Detail: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding">
+            <IonRefresher slot="fixed" onIonRefresh={handleRefresh}>
+            <IonRefresherContent></IonRefresherContent>
+            </IonRefresher>
                 <div className='flex flex-col gap-3'>
                     <div>
                     <Swiper
-                    style={{ "--swiper-pagination-color": "#000",  }}
+                    style={{ }}
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     spaceBetween={10}
                     slidesPerView={1}
                     scrollbar={{ draggable: true, hide: true, enabled:false, }}
-                    pagination={{clickable: true, bulletElement: ''}}
+                    pagination={{clickable: true}}
                     onSwiper={(swiper) => console.log(swiper)}
                     onSlideChange={() => console.log('slide change')}
                     className=''
@@ -45,23 +54,23 @@ const Detail: React.FC = () => {
                     
                     {
                         data.image1 ? <SwiperSlide>
-                        <img src={data.image1} className='hover:object-contain ease-in duration-500 rounded-xl w-full h-[200px] object-cover mb-7' alt="" />
+                        <img src={data.image1} className='hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover mb-7' alt="" />
                         </SwiperSlide> : ''
                     }
                     {
-                        data.image2 ? <SwiperSlide><img src={data.image2} className='rounded-xl w-full h-[200px] object-cover' alt="" />
+                        data.image2 ? <SwiperSlide><img src={data.image2} className='rounded-xl w-full h-[300px] object-cover' alt="" />
                         </SwiperSlide> : ''
                     }
                     {
-                        data.image3 ? <SwiperSlide><img src={data.image3} className='rounded-xl w-full h-[200px] object-cover' alt="" />
+                        data.image3 ? <SwiperSlide><img src={data.image3} className='rounded-xl w-full h-[300px] object-cover' alt="" />
                         </SwiperSlide> : ''
                     }
                     {
-                        data.image4 ? <SwiperSlide><img src={data.image4} className='rounded-xl w-full h-[200px] object-cover' alt="" />
+                        data.image4 ? <SwiperSlide><img src={data.image4} className='rounded-xl w-full h-[300px] object-cover' alt="" />
                         </SwiperSlide> : ''
                     }
                     {
-                        data.image5 ? <SwiperSlide><img src={data.image5} className='rounded-xl w-full h-[200px] object-cover' alt="" />
+                        data.image5 ? <SwiperSlide><img src={data.image5} className='rounded-xl w-full h-[300px] object-cover' alt="" />
                         </SwiperSlide> : ''
                     }
                 </Swiper>

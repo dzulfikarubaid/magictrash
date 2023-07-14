@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { IonButtons, IonContent, IonHeader, IonItem, IonItemGroup, IonList, IonMenu, IonMenuButton, IonPage, IonSearchbar, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButtons, IonContent, IonHeader, IonItem, IonItemGroup, IonList, IonMenu, IonMenuButton, IonPage, IonRefresher, IonRefresherContent, IonSearchbar, IonTitle, IonToolbar, RefresherEventDetail } from '@ionic/react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import './Start.css';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 function Start() {
     const [data, setData] = useState([])
+    function handleRefresh(event: CustomEvent<RefresherEventDetail>) {
+      setTimeout(() => {
+        // Any calls to load data go here
+        event.detail.complete();
+      }, 2000);
+    }
     useEffect(() => {
         axios.get('https://magictrash-api.vercel.app/list/').then((res) => {
             setData(res.data)
@@ -50,6 +56,9 @@ function Start() {
           </IonToolbar>
         </IonHeader>
         <IonContent>
+        <IonRefresher slot="fixed" onIonRefresh={handleRefresh}>
+          <IonRefresherContent></IonRefresherContent>
+        </IonRefresher>
             <div className='flex flex-row justify-between mt-5'>
                 <div className='px-5 flex flex-col gap-5'>
                     <h1 className='text-xl font-bold'>Tempatnya Jual Beli Fashion Bekas Murah, Kualitas Wahh!</h1>
