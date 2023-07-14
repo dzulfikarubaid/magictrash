@@ -31,6 +31,7 @@ import PostDetail from './pages/PostDetail';
 import Apply from './pages/Apply';
 import Kl from './pages/Kl';
 import Detail from './pages/Detail';
+import Shop from './pages/Shop';
 setupIonicReact();
 
 const App: React.FC = () => (
@@ -65,7 +66,7 @@ const App: React.FC = () => (
           <Kl></Kl>
         </Route>
         <Route path='/product/:id' component={Detail}></Route>
-        
+        <Route path={'/shop'}><Shop /></Route>
 
         
         

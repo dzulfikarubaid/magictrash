@@ -5,6 +5,7 @@ import axios from 'axios';
 import './Start.css';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Menu from './Menu';
 function Start() {
     const [data, setData] = useState([])
     function handleRefresh(event: CustomEvent<RefresherEventDetail>) {
@@ -20,32 +21,7 @@ function Start() {
     },[])
   return (
     <>
-      <IonMenu contentId="main-content" side='end'>
-        <IonHeader className='ion-no-border'>
-          <IonToolbar>
-            <IonTitle className='font-semibold '>Magictrash</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent >
-            <IonList>
-                <IonItemGroup>
-                    <IonItem>
-                        <Link to='/'>Shop</Link>
-                    </IonItem>
-                    <IonItem>
-                        <Link to='/'>Sell</Link>
-                    </IonItem>
-                    <IonItem>
-                        <Link to='/'>Service</Link>
-                    </IonItem>
-                    <IonItem>
-                        <Link to='/'>About Us</Link>
-                    </IonItem>
-                   
-                </IonItemGroup>
-            </IonList>
-        </IonContent>
-      </IonMenu>
+      <Menu></Menu>
       <IonPage id="main-content">
         <IonHeader className='ion-no-border'>
           <IonToolbar>
