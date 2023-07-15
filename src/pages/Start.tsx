@@ -10,7 +10,7 @@ function Start() {
   function SkeletonArmy(){
     return(
       <div className='mb-3'>
-        <div className='w-[95px] h-[95px]'>
+        <div className='w-[120px] h-[130px] rounded-xl'>
       <IonSkeletonText animated={true}></IonSkeletonText>
       <h3 className='mt-1 text-[10px]'>
         <IonSkeletonText animated={true}></IonSkeletonText>

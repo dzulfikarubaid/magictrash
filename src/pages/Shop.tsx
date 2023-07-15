@@ -27,6 +27,7 @@ function Shop(){
     )
    
   }
+    const [search, setSearch] = useState('')
     const [loaded, setLoaded] = useState(false)
     const [data, setData] = useState([])
     useEffect(() => {
@@ -35,6 +36,9 @@ function Shop(){
             setLoaded(true)
         })
     },[])
+    let [results, setResults] = useState([...data])
+   
+    const [text, setText] = useState('')
     return(
         <>
         
@@ -50,21 +54,25 @@ function Shop(){
           </IonToolbar>
         </IonHeader>
         <IonContent className='ion-padding'>
-        <IonSearchbar animated={true} showCancelButton="focus" placeholder='Cari Sesuatu' class="custom"></IonSearchbar>
+        <IonSearchbar type='text' animated={true} onIonInput={(e) => setText(e.detail.value!)} showCancelButton="focus" placeholder='Cari Sesuatu' class="custom"></IonSearchbar>
         <div className='flex flex-wrap justify-center gap-5 mt-3'>
-        {
-            data.map((item:any)=>{
+        {loaded &&  
+      
+            data.filter((item:any)=>{
+              return text.toLowerCase() === '' 
+              ? item 
+              : item.title.toLowerCase().includes(text)
+            }).map((item:any)=>{
                 return(
-                  <>
-                  {loaded &&  
+   
                   <Link key={item.id} to={`/product/${item.id}`} className='flex flex-col gap-2  w-[95px] h-fit'>
                         <img className='rounded-xl w-[95px] h-[95px] object-cover' src={item.image1} alt="" />
                         <h1 className='text-[10px] font-semibold'>{item.title}</h1>
                         
                         {/* <h1 className='text-sm'>{item.harga_asli}</h1> */}
                         <h1 className='text-[10px]'>Rp{item.harga_diskon}</h1>
-                    </Link>}
-                  </>
+                    </Link>
+                
                 )
             })
         }
