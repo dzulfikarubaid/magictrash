@@ -37,7 +37,17 @@ function Shop(){
         })
     },[])
     let [results, setResults] = useState([...data])
-   
+    function handleRefresh(event: CustomEvent<RefresherEventDetail>) {
+      setTimeout(() => {
+        // Any calls to load data go here
+        setLoaded(false)
+        axios.get('https://magictrash-api.vercel.app/').then((res) => {
+              setData(res.data)
+              setLoaded(true)
+          })
+        event.detail.complete();
+      }, 2000);
+    }
     const [text, setText] = useState('')
     return(
         <>
@@ -54,6 +64,9 @@ function Shop(){
           </IonToolbar>
         </IonHeader>
         <IonContent className='ion-padding'>
+        <IonRefresher slot="fixed" onIonRefresh={handleRefresh}>
+          <IonRefresherContent></IonRefresherContent>
+        </IonRefresher>
         <IonSearchbar type='text' animated={true} onIonInput={(e) => setText(e.detail.value!)} showCancelButton="focus" placeholder='Cari Sesuatu' class="custom"></IonSearchbar>
         <div className='flex flex-wrap justify-center gap-5 mt-3'>
         {loaded &&  
