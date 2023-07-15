@@ -87,19 +87,19 @@ const Detail: React.FC = () => {
                         </SwiperSlide> : ''
                     }
                     {
-                        data.image2 ? <SwiperSlide className='mb-10'><img src={data.image2} className='rounded-xl w-full h-[300px] object-cover' alt="" />
+                        data.image2 ? <SwiperSlide><img src={data.image2} className='mb-10 hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover' alt="" />
                         </SwiperSlide> : ''
                     }
                     {
-                        data.image3 ? <SwiperSlide><img src={data.image3} className='rounded-xl w-full h-[300px] object-cover' alt="" />
+                        data.image3 ? <SwiperSlide><img src={data.image3} className='hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover' alt="" />
                         </SwiperSlide> : ''
                     }
                     {
-                        data.image4 ? <SwiperSlide><img src={data.image4} className='rounded-xl w-full h-[300px] object-cover' alt="" />
+                        data.image4 ? <SwiperSlide><img src={data.image4} className='hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover' alt="" />
                         </SwiperSlide> : ''
                     }
                     {
-                        data.image5 ? <SwiperSlide><img src={data.image5} className='rounded-xl w-full h-[300px] object-cover' alt="" />
+                        data.image5 ? <SwiperSlide><img src={data.image5} className=' hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover' alt="" />
                         </SwiperSlide> : ''
                     }</>
                 
