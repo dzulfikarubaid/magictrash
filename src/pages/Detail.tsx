@@ -1,4 +1,4 @@
-import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonRefresher, IonRefresherContent, IonTitle, IonToolbar, RefresherEventDetail } from '@ionic/react';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonRefresher, IonRefresherContent, IonSkeletonText, IonTitle, IonToolbar, RefresherEventDetail } from '@ionic/react';
 import axios from 'axios';
 import { logoWhatsapp, personCircleOutline, personOutline } from 'ionicons/icons';
 import React, { useEffect, useState } from 'react';
@@ -13,6 +13,17 @@ type QuizParams = {
 const Detail: React.FC = () => {
     const {id} = useParams<QuizParams>();
     const [data, setData] = useState<any>([])
+    const [loaded, setLoaded] = useState(false)
+    function SkeletonArmy(){
+        return(
+          <div className='mb-3'>
+            <div className='w-full h-[300px] rounded-xl'>
+          <IonSkeletonText animated={true}></IonSkeletonText>
+        </div>
+          </div>
+          
+    
+        )}
     function handleRefresh(event: CustomEvent<RefresherEventDetail>) {
         setTimeout(() => {
           // Any calls to load data go here
@@ -22,6 +33,7 @@ const Detail: React.FC = () => {
     useEffect(() => {
         axios.get(`https://magictrash-api.vercel.app/${id}/`).then((res) => {
             setData(res.data)
+            setLoaded(true)
         })
     },[id])
     return (
@@ -51,8 +63,10 @@ const Detail: React.FC = () => {
                     onSlideChange={() => console.log('slide change')}
                     className=''
                 >
-                    
                     {
+                        loaded && 
+                        <>
+                        {
                         data.image1 ? <SwiperSlide>
                         <img src={data.image1} className='hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover mb-7' alt="" />
                         </SwiperSlide> : ''
@@ -72,9 +86,14 @@ const Detail: React.FC = () => {
                     {
                         data.image5 ? <SwiperSlide><img src={data.image5} className='rounded-xl w-full h-[300px] object-cover' alt="" />
                         </SwiperSlide> : ''
+                    }</>
                     }
+                    
+                    
                 </Swiper>
-
+                {
+                    !loaded && <SkeletonArmy></SkeletonArmy>
+                }
                 </div>
                 
                 <h1 className='text-xl font-bold'>{data.title}</h1>

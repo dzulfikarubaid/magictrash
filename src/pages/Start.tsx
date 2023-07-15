@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IonButtons, IonContent, IonHeader, IonItem, IonItemGroup, IonList, IonMenu, IonMenuButton, IonPage, IonRefresher, IonRefresherContent, IonSearchbar, IonTitle, IonToolbar, RefresherEventDetail } from '@ionic/react';
+import { IonButtons, IonContent, IonHeader, IonItem, IonItemGroup, IonList, IonMenu, IonMenuButton, IonPage, IonRefresher, IonRefresherContent, IonSearchbar, IonSkeletonText, IonTitle, IonToolbar, RefresherEventDetail } from '@ionic/react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Start.css';
@@ -7,7 +7,26 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Menu from './Menu';
 function Start() {
+  function SkeletonArmy(){
+    return(
+      <div className='mb-3'>
+        <div className='w-[95px] h-[95px]'>
+      <IonSkeletonText animated={true}></IonSkeletonText>
+      <h3 className='mt-1 text-[10px]'>
+        <IonSkeletonText animated={true}></IonSkeletonText>
+      </h3>
+      <p className='w-[70%] mt-1 text-[10px]'>
+        <IonSkeletonText animated></IonSkeletonText>
+      </p>
+    </div>
+      </div>
+      
+
+    )
+   
+  }
     const [data, setData] = useState([])
+    const [loaded, setLoaded] = useState(false)
     function handleRefresh(event: CustomEvent<RefresherEventDetail>) {
       setTimeout(() => {
         // Any calls to load data go here
@@ -17,6 +36,7 @@ function Start() {
     useEffect(() => {
         axios.get('https://magictrash-api.vercel.app/list/').then((res) => {
             setData(res.data)
+            setLoaded(true)
         })
     },[])
   return (
@@ -64,6 +84,9 @@ function Start() {
                         
                     { data.map((item:any) => {
                             return (
+                              <>
+                              {
+                                loaded &&
                                 <SwiperSlide key={item.id}>
                                 <Link to={`/product/${item.id}`} className='flex flex-col gap-2 mb-6'>
                                     <img className='rounded-xl w-[150px] h-[150px] object-cover' src={item.image1} alt="" />
@@ -73,11 +96,24 @@ function Start() {
                                     <h1 className='text-[10px]'>Rp{item.harga_diskon}</h1>
                                 </Link>
                                 </SwiperSlide>
+                              }
+                              
+                              </>
+                                
                             )
                         })
                     }
-                    </Swiper>
                     
+                    </Swiper>
+                    {
+                      !loaded && 
+                      <div className='mb-3 flex flex-row gap-3'>
+                      <SkeletonArmy></SkeletonArmy>
+                      <SkeletonArmy></SkeletonArmy>
+                      <SkeletonArmy></SkeletonArmy>
+                      {/* <SkeletonArmy></SkeletonArmy> */}
+                      </div>
+                    }
                 </div>
                     <h1 className='font-semibold'>Layanan Magictrash</h1>
                     <p className='text-justify text-[10px]'>Kamu bisa ngejual atau ngebeli produk bekas berkualitas dengan harga nyaman di kantong. Kamu juga bisa menyumbangkan barangmu agar bermanfaat kepada orang yang membutuhkan.</p>
