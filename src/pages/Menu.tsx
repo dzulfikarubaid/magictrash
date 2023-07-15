@@ -23,13 +23,13 @@ const Menu: React.FC = () => {
                         <Link onClick={closeMenu} to='/shop'>Shop</Link>
                     </IonItem>
                     <IonItem>
-                        <Link onClick={closeMenu} to='/'>Sell</Link>
+                        <Link onClick={closeMenu} to='/sell'>Sell</Link>
                     </IonItem>
                     <IonItem >
-                        <Link onClick={closeMenu} to='/'>Service</Link>
+                        <a href="#layanan" onClick={closeMenu}>Service</a>
                     </IonItem>
                     <IonItem >
-                        <Link onClick={closeMenu} to='/'>About Us</Link>
+                        <Link onClick={closeMenu} to='#faq'>FAQ</Link>
                     </IonItem>
                    
                 </IonItemGroup>

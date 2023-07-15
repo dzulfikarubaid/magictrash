@@ -25,7 +25,7 @@ const Detail: React.FC = () => {
         <h1 className='line-through '><IonSkeletonText className='h-3 w-[30%]' animated={true}></IonSkeletonText></h1>
         <h1 className='font-bold'><IonSkeletonText className='w-[50%] h-3' animated={true}></IonSkeletonText></h1>
         <div className='flex flex-col gap-1'>
-        <p className='w-full h-[1000px]'><IonSkeletonText animated={true}></IonSkeletonText></p>
+        <p className='w-full h-[300px]'><IonSkeletonText animated={true}></IonSkeletonText></p>
         
         </div>
         
