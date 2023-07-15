@@ -38,9 +38,10 @@ function Shop(){
     },[])
     let [results, setResults] = useState([...data])
     function handleRefresh(event: CustomEvent<RefresherEventDetail>) {
+      location.reload()
       setTimeout(() => {
         // Any calls to load data go here
-        location.reload()
+
         event.detail.complete();
       }, 2000);
     }
