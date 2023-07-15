@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IonButtons, IonContent, IonHeader, IonItem, IonItemGroup, IonList, IonMenu, IonMenuButton, IonPage, IonRefresher, IonRefresherContent, IonSearchbar, IonSkeletonText, IonTitle, IonToolbar, RefresherEventDetail } from '@ionic/react';
+import { IonButtons, IonContent, IonHeader, IonItem, IonItemGroup, IonList, IonMenu, IonMenuButton, IonPage, IonRefresher, IonRefresherContent, IonSearchbar, IonSkeletonText, IonTitle, IonToolbar, RefresherEventDetail, } from '@ionic/react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
@@ -38,6 +38,7 @@ function Start() {
             setLoaded(true)
         })
     },[])
+  
   return (
     <>
       <Menu></Menu>

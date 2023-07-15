@@ -3,29 +3,33 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Menu: React.FC = () => {
-   
+    const closeMenu = () => {
+        setTimeout(() => {
+            document.querySelector('ion-menu')!.toggle();
+        }, 200)
+      };
     return (
-        <IonMenu contentId='main-content' side='end'>
+        <IonMenu contentId='main-content' side='end' >
         <IonHeader className='ion-no-border'>
           <IonToolbar>
-            <IonTitle className='font-semibold '><Link to={'/'}>
+            <IonTitle className='font-semibold '><Link onClick={closeMenu} to={'/'}>
             Magictrash</Link></IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent >
             <IonList>
                 <IonItemGroup>
-                    <IonItem>
-                        <Link to='/shop'>Shop</Link>
+                    <IonItem >
+                        <Link onClick={closeMenu} to='/shop'>Shop</Link>
                     </IonItem>
                     <IonItem>
-                        <Link to='/'>Sell</Link>
+                        <Link onClick={closeMenu} to='/'>Sell</Link>
                     </IonItem>
-                    <IonItem>
-                        <Link to='/'>Service</Link>
+                    <IonItem >
+                        <Link onClick={closeMenu} to='/'>Service</Link>
                     </IonItem>
-                    <IonItem>
-                        <Link to='/'>About Us</Link>
+                    <IonItem >
+                        <Link onClick={closeMenu} to='/'>About Us</Link>
                     </IonItem>
                    
                 </IonItemGroup>
