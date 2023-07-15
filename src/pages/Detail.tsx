@@ -74,17 +74,16 @@ const Detail: React.FC = () => {
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     spaceBetween={10}
                     slidesPerView={1}
-                    // scrollbar={{ draggable: true, hide: true, enabled:false, }}
                     pagination={{clickable: true}}
                     onSwiper={(swiper) => console.log(swiper)}
                     onSlideChange={() => console.log('slide change')}
-                    
+                    className=''
                 >
                      
                         <>
                         {
-                        data.image1 ? <SwiperSlide>
-                        <img src={data.image1} className='hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover mb-5' alt="" />
+                        data.image1 ? <SwiperSlide className='mb-9'>
+                        <img src={data.image1} className='hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover' alt="" />
                         </SwiperSlide> : ''
                     }
                     {

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { IonButtons, IonContent, IonHeader, IonItem, IonItemGroup, IonList, IonMenu, IonMenuButton, IonPage, IonRefresher, IonRefresherContent, IonSearchbar, IonSkeletonText, IonTitle, IonToolbar, RefresherEventDetail } from '@ionic/react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import './Start.css';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Menu from './Menu';
@@ -82,7 +81,7 @@ function Start() {
                             modules={[Navigation, Pagination, Scrollbar, A11y]}
                             spaceBetween={15}
                             slidesPerView={2.5}
-                            scrollbar={{ draggable: true, hide:true, enabled:false}}
+                          
                             onSwiper={(swiper) => console.log(swiper)}
                             onSlideChange={() => console.log('slide change')}
                         >

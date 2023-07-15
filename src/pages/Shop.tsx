@@ -7,7 +7,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Menu from './Menu';
 import './Home.css'
-
+import './Start.css'
 function Shop(){
   function SkeletonArmy(){
     return(
