@@ -28,12 +28,7 @@ function Start() {
     const [loaded, setLoaded] = useState(false)
     function handleRefresh(event: CustomEvent<RefresherEventDetail>) {
       setTimeout(() => {
-        // Any calls to load data go here
-        setLoaded(false)
-        axios.get('https://magictrash-api.vercel.app/list/').then((res) => {
-            setData(res.data)
-            setLoaded(true)
-        })
+        location.reload()
         event.detail.complete();
       }, 2000);
     }

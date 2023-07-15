@@ -35,12 +35,8 @@ const Detail: React.FC = () => {
         )}
     function handleRefresh(event: CustomEvent<RefresherEventDetail>) {
         setTimeout(() => {
+            location.reload()
           // Any calls to load data go here
-          setLoaded(false)
-          axios.get(`https://magictrash-api.vercel.app/${id}/`).then((res) => {
-            setData(res.data)
-            setLoaded(true)
-        })
           event.detail.complete();
         }, 2000);
       }
@@ -126,7 +122,7 @@ const Detail: React.FC = () => {
                     <h1 className='text-[12px]'>Chief Marketing Officer</h1>
                     </div>
                     </div>
-                    <a target='_blank' href={`https://api.whatsapp.com/send/?phone=6287855715585&text=Hai kak, saya ingin membeli ${data.title}, produk nomor ${data.id}, harga ${data.harga_asli}&&type=phone_number&app_absent=0`}>
+                    <a target='_blank' href={`https://api.whatsapp.com/send/?phone=6287855715585&text=Hai kak, saya ingin membeli ${data.title}, produk nomor ${data.id}, harga Rp${data.harga_asli}&&type=phone_number&app_absent=0`}>
                     <IonIcon size='large' icon={logoWhatsapp}></IonIcon>
                     </a>
                 </div>
