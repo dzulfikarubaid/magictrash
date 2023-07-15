@@ -67,7 +67,7 @@ function Shop(){
         <div className='flex flex-wrap justify-center gap-5 mt-3'>
         {loaded &&  
             
-            data.filter((item:any)=>{
+            data.slice(0).reverse().filter((item:any)=>{
               return text.toLowerCase() === '' 
               ? item 
               : 

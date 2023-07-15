@@ -48,12 +48,12 @@ const Detail: React.FC = () => {
     },[id])
     return (
         <IonPage>
-            <IonHeader className='ion-no-border pt-4 bg-none'>
-                <IonToolbar className='ion-no-border bg-white'>
+            <IonHeader className='ion-no-border '>
+                <IonToolbar className='ion-no-border bg-none bg-white'>
                 <IonButtons slot="start">
                 <IonBackButton></IonBackButton>
                 </IonButtons>
-                    <h1 className='text-xl font-bold text-black px-3'>Detail Produk</h1>
+                    <h1 className='text-xl font-bold text-black px-3 '>Detail Produk</h1>
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding">

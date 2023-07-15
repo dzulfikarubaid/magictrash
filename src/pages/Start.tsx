@@ -33,7 +33,7 @@ function Start() {
       }, 2000);
     }
     useEffect(() => {
-        axios.get('https://magictrash-api.vercel.app/list/').then((res) => {
+        axios.get('https://magictrash-api.vercel.app/').then((res) => {
             setData(res.data)
             setLoaded(true)
         })
@@ -81,7 +81,7 @@ function Start() {
                             onSlideChange={() => console.log('slide change')}
                         >
                         
-                    { data.map((item:any) => {
+                    { data.slice(-4).map((item:any) => {
                             return (
                               <>
                               {
