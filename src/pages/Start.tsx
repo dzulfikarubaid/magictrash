@@ -27,8 +27,9 @@ function Start() {
     const [data, setData] = useState([])
     const [loaded, setLoaded] = useState(false)
     function handleRefresh(event: CustomEvent<RefresherEventDetail>) {
+      location.reload()
       setTimeout(() => {
-        location.reload()
+        
         event.detail.complete();
       }, 2000);
     }
