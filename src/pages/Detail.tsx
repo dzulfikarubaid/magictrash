@@ -16,11 +16,20 @@ const Detail: React.FC = () => {
     const [loaded, setLoaded] = useState(false)
     function SkeletonArmy(){
         return(
-          <div className='mb-3'>
-            <div className='w-full h-[300px] rounded-xl'>
-          <IonSkeletonText animated={true}></IonSkeletonText>
+        <div className='mb-3 flex flex-col gap-3'>
+        <div className=' rounded-xl mb-3'>
+          <IonSkeletonText className='w-full h-[300px]' animated={true}></IonSkeletonText>
         </div>
-          </div>
+        <h1 ><IonSkeletonText className='h-4 w-full' animated={true}></IonSkeletonText></h1>
+        <h2 className='font-semibold'><IonSkeletonText className='w-[40%]  h-3' animated={true}></IonSkeletonText></h2>
+        <h1 className='line-through '><IonSkeletonText className='h-3 w-[30%]' animated={true}></IonSkeletonText></h1>
+        <h1 className='font-bold'><IonSkeletonText className='w-[50%] h-3' animated={true}></IonSkeletonText></h1>
+        <div className='flex flex-col gap-1'>
+        <p className='w-full h-[1000px]'><IonSkeletonText animated={true}></IonSkeletonText></p>
+        
+        </div>
+        
+        </div>
           
     
         )}
@@ -56,24 +65,26 @@ const Detail: React.FC = () => {
             <IonRefresherContent></IonRefresherContent>
             </IonRefresher>
                 <div className='flex flex-col gap-3'>
+                {
+                    loaded &&
+                    <>
                     <div>
                     <Swiper
                     style={{ }}
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     spaceBetween={10}
                     slidesPerView={1}
-                    scrollbar={{ draggable: true, hide: true, enabled:false, }}
+                    // scrollbar={{ draggable: true, hide: true, enabled:false, }}
                     pagination={{clickable: true}}
                     onSwiper={(swiper) => console.log(swiper)}
                     onSlideChange={() => console.log('slide change')}
-                    className=''
+                    
                 >
-                    {
-                        loaded && 
+                     
                         <>
                         {
                         data.image1 ? <SwiperSlide>
-                        <img src={data.image1} className='hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover mb-7' alt="" />
+                        <img src={data.image1} className='hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover mb-5' alt="" />
                         </SwiperSlide> : ''
                     }
                     {
@@ -92,20 +103,21 @@ const Detail: React.FC = () => {
                         data.image5 ? <SwiperSlide><img src={data.image5} className='rounded-xl w-full h-[300px] object-cover' alt="" />
                         </SwiperSlide> : ''
                     }</>
-                    }
+                
                     
                     
                 </Swiper>
-                {
-                    !loaded && <SkeletonArmy></SkeletonArmy>
-                }
                 </div>
-                
                 <h1 className='text-xl font-bold'>{data.title}</h1>
                 <h1 className='font-semibold'>Rp{data.harga_diskon}</h1>
                 <h1 className='line-through text-[12px]'>Rp{data.harga_asli}</h1>
                 <h1 className='font-bold'>Deskripsi Produk</h1>
                 <p>{data.body}</p>
+                </>
+                }
+                {
+                    !loaded && <SkeletonArmy></SkeletonArmy>
+                }
                 <h1 className='font-bold'>Beli Sekarang</h1>
                 <div className='flex flex-row justify-between'>
                     <div className='flex flex-row gap-3'>
