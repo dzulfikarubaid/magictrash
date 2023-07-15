@@ -57,11 +57,12 @@ function Shop(){
         <IonSearchbar type='text' animated={true} onIonInput={(e) => setText(e.detail.value!)} showCancelButton="focus" placeholder='Cari Sesuatu' class="custom"></IonSearchbar>
         <div className='flex flex-wrap justify-center gap-5 mt-3'>
         {loaded &&  
-      
+            
             data.filter((item:any)=>{
               return text.toLowerCase() === '' 
               ? item 
-              : item.title.toLowerCase().includes(text)
+              : 
+              item.title.toLowerCase().includes(text)
             }).map((item:any)=>{
                 return(
    
