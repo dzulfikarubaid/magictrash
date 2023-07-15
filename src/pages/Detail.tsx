@@ -82,12 +82,12 @@ const Detail: React.FC = () => {
                      
                         <>
                         {
-                        data.image1 ? <SwiperSlide className='mb-10'>
+                        data.image1 ? <SwiperSlide >
                         <img src={data.image1} className='hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover' alt="" />
                         </SwiperSlide> : ''
                     }
                     {
-                        data.image2 ? <SwiperSlide><img src={data.image2} className='rounded-xl w-full h-[300px] object-cover' alt="" />
+                        data.image2 ? <SwiperSlide className='mb-10'><img src={data.image2} className='rounded-xl w-full h-[300px] object-cover' alt="" />
                         </SwiperSlide> : ''
                     }
                     {
