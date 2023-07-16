@@ -166,13 +166,13 @@ function Start() {
                     <div className='text-center'>
                       <h1 className='font-semibold text-center mb-3'>Mekanisme Penjualan Barang</h1>
                       <h1 className='font-semibold text-center mb-3' id='faq'>Frequently Asked Questions</h1>
-                      <div className='flex flex-col gap-3'>
+                      {/* <div className='flex flex-col gap-3'>
                         <div className='rounded-xl w-fullpy-4 border-2'><h1 >Apa itu Magictrash?</h1></div>
                         <div className='rounded-xl w-fullpy-4 border-2'><h1 >Apa aja baju bekas yang diterima?</h1></div>
                         <div className='rounded-xl w-fullpy-4 border-2'><h1 >Apa keunggulan Magictrash?</h1></div>
                         <div className='rounded-xl w-fullpy-4 border-2'><h1 >Gimana cara menyumbangkan baju?</h1></div>
                         
-                      </div>
+                      </div> */}
                       
                     
                     </div>
