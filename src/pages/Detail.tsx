@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import video from './video.mp4';
 type QuizParams = {
     id: string;
   };
@@ -128,7 +128,9 @@ const Detail: React.FC = () => {
                     </a>
                 </div>
                 </div>
-                
+                <h1 className='font-bold  my-3'>Video Pemrosesan Produk</h1>
+                <video src={video} width="750" height="500" controls>
+                </video>
             </IonContent>
         </IonPage>
     );

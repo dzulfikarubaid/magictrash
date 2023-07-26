@@ -36,6 +36,8 @@ import Sell from './pages/Sell';
 import Service from './pages/Service';
 import { Component } from '@ionic/pwa-elements/dist/types/stencil-public-runtime';
 import About from './pages/About';
+import Donation from './pages/Donation';
+import Success from './pages/Success';
 setupIonicReact();
 
 const App: React.FC = () => (
@@ -72,6 +74,10 @@ const App: React.FC = () => (
         <Route path='/product/:id' component={Detail}></Route>
         <Route path={'/shop'}><Shop /></Route>
         <Route path={'/sell'} component={Sell}></Route>
+        <Route path={'/success'}>
+          <Success></Success>
+        </Route>
+        <Route path={'/donation'} component={Donation}></Route>
         <Route path='/service' component={Service}></Route>
         <Route path='/about' component={About}></Route>
         

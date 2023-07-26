@@ -2,10 +2,11 @@ import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, I
 import { cloudUploadOutline } from 'ionicons/icons';
 import React from 'react';
 
-const Sell: React.FC = () => {
+const Donation: React.FC = () => {
     function handleClick(){
         window.location.href = '/success'
     }
+
     return (
         <IonPage>
             <IonHeader className='ion-no-border  bg-none'>
@@ -13,7 +14,7 @@ const Sell: React.FC = () => {
                 <IonButtons slot="start">
                 <IonBackButton></IonBackButton>
                 </IonButtons>
-                    <h1 className='text-xl font-bold text-black px-3'>Penjualan</h1>
+                    <h1 className='text-xl font-bold text-black px-3'>Donasi</h1>
                 </IonToolbar>
             </IonHeader>
             <IonContent className="ion-padding">
@@ -24,10 +25,9 @@ const Sell: React.FC = () => {
                 <input className='bg-slate-100 w-full p-2 focus:outline-none rounded-lg' type="text" />
                 <label htmlFor="">Alamat</label>
                 <input className='bg-slate-100 w-full p-2 focus:outline-none rounded-lg' type="text" />
-                <label htmlFor="">Alasan Menjual</label>
+                <label htmlFor="">Alasan Donasi</label>
                 <input className='bg-slate-100 w-full p-2 focus:outline-none rounded-lg' type="text" />
-                <label htmlFor="">Harga</label>
-                <input className='bg-slate-100 w-full p-2 focus:outline-none rounded-lg' type="text" />
+               
                 <label htmlFor="">Foto Barang</label>
                 <button className='' >
                         <div className='py-4 w-full rounded-lg bg-slate-100 text-slate-400'>
@@ -36,11 +36,11 @@ const Sell: React.FC = () => {
                         </div>
                     </button>
                     <input type="image" value='' />
-                <button className='bg-black text-white p-2 rounded-lg mt-4' type='button' onClick={handleClick}>Jual</button>
+                <button className='bg-black text-white p-2 rounded-lg mt-2' onClick={handleClick} type='button'>Donasi</button>
                 </form>
             </IonContent>
         </IonPage>
     );
 };
 
-export default Sell;
+export default Donation;

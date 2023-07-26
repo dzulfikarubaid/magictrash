@@ -25,6 +25,9 @@ const Menu: React.FC = () => {
                     <IonItem>
                         <Link onClick={closeMenu} to='/sell'>Sell</Link>
                     </IonItem>
+                    <IonItem>
+                        <Link onClick={closeMenu}  to={'/donation'}>Donation</Link>
+                    </IonItem>
                     <IonItem >
                         <a href="#layanan" onClick={closeMenu}>Service</a>
                     </IonItem>

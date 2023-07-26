@@ -120,18 +120,23 @@ function Start() {
                 </div>
                     <h1 id='layanan' className='font-semibold'>Layanan Magictrash</h1>
                     <p className='text-justify text-[10px]'  >Kamu bisa ngejual atau ngebeli produk bekas berkualitas dengan harga nyaman di kantong. Kamu juga bisa menyumbangkan barangmu agar bermanfaat kepada orang yang membutuhkan.</p>
-                    <div className='flex gap-3 justify-center items-center'>
-                        <div className='border-[1.5px] w-[100px] h-[120px] rounded-xl'>
+                    <div className='flex flex-col gap-5'>
+                    <div className='border-[1.5px] w-full p-2 h-[80px] rounded-xl'>
                         <h1 className='text-[10px] p-2'>Foto barang bekasmu, konfirmasi ke admin, kurir akan menjemputmu dan membayar barangmu.</h1>
-                        </div>
-                        <div className='border-[1.5px] w-[100px] h-[120px] rounded-xl'>
+                      </div>
+
+            
+                    <div className='border-[1.5px] w-full h-[80px] rounded-xl'>
                         <h1 className='text-[10px] p-2'>Antar langsung barangmu ke tempat kami terdekat. Tanpa menunggu kurir dan proses cepat.</h1>
                         </div>
-                        <div className='border-[1.5px] w-[100px] h-[120px] rounded-xl'>
+                  
+                    <div className='border-[1.5px] w-full h-[80px] rounded-xl'>
                         <h1 className='text-[10px] p-2'>
                         Layanan donasi barang bekas yang diberikan kepada panti atau orang yang berkebutuhan.</h1>
                         </div>
+
                     </div>
+                    
                     <div>
                       <h1 className='font-semibold text-center mb-3'>Kenapa Harus Pake Magictrash?</h1>
                       <div className='flex gap-3 justify-center items-center'>
