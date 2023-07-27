@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import video from './video.mp4';
+import video from './jeans.mp4';
 type QuizParams = {
     id: string;
   };
@@ -131,7 +131,7 @@ const Detail: React.FC = () => {
                 </div>
                 </div>
                 <h1 className='font-bold  my-3'>Video Pemrosesan Produk</h1>
-                <iframe src="https://drive.google.com/file/d/1-JqWn_GRpO9WzOs-zLgqOTiNOoQWMC2U/preview" className='w-full h-[400px] mb-10' allow="autoplay"></iframe>
+                <video className='w-full h-[300px]' src={video}></video>
             </IonContent>
         </IonPage>
     );

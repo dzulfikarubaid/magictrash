@@ -51,7 +51,7 @@ function Start() {
               <IonIcon ></IonIcon>
               <IonMenuButton></IonMenuButton>
             </IonButtons>
-            <IonTitle className='font-semibold'>Magictrash</IonTitle>
+            <IonTitle className='font-semibold '>Magictrash</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent>
