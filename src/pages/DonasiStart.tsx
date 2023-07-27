@@ -2,9 +2,9 @@ import { IonButtons, IonContent, IonHeader, IonIcon, IonMenuButton, IonPage, Ion
 import React from 'react';
 import Menu from './Menu';
 
-const SellStart: React.FC = () => {
+const DonasiStart: React.FC = () => {
     function handleClick(){
-        window.location.href = '/sell-form'
+        window.location.href = '/donasi-form'
     }
     return (
         <>
@@ -22,9 +22,9 @@ const SellStart: React.FC = () => {
             <IonContent className="ion-padding">
                 <div className='flex flex-row justify-between p-4'>
                     <div>
-                        <h1 className='font-bold text-[20px]'>Daripada nganggur mending jual aja</h1>
+                        <h1 className='font-bold text-[20px]'>Yuk, Mulai Berdonasi Barang Bekas!</h1>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta voluptatibus aperiam facere quisquam. Mollitia ipsa iure ipsum impedit laborum. Facere nemo a perspiciatis nostrum mollitia, repellat velit consectetur quasi earum!</p>
-                        <button onClick={handleClick} className='mt-5 w-full rounded-xl bg-black text-white p-2' >Jual Sekarang</button>
+                        <button onClick={handleClick} className='mt-5 w-full rounded-xl bg-black text-white p-2' >Donasi Sekarang</button>
                     </div>
                     <div>
                     
@@ -40,4 +40,4 @@ const SellStart: React.FC = () => {
     );
 };
 
-export default SellStart;
+export default DonasiStart;

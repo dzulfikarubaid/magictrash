@@ -39,6 +39,7 @@ import About from './pages/About';
 import Donation from './pages/Donation';
 import Success from './pages/Success';
 import SellStart from './pages/SellStart';
+import DonasiStart from './pages/DonasiStart';
 setupIonicReact();
 
 const App: React.FC = () => (
@@ -74,15 +75,15 @@ const App: React.FC = () => (
         </Route>
         <Route path='/product/:id' component={Detail}></Route>
         <Route path={'/shop'}><Shop /></Route>
-        <Route path={'/sell/form'} component={Sell}></Route>
+        <Route path={'/sell-form'} component={Sell}></Route>
         <Route path={'/success'}>
           <Success></Success>
         </Route>
-        <Route path={'/donation'} component={Donation}></Route>
+        <Route path={'/donation'} component={DonasiStart}></Route>
         <Route path='/service' component={Service}></Route>
         <Route path='/about' component={About}></Route>
         <Route path='/sell' component={SellStart}></Route>
-        
+        <Route path={'/donasi-form'} component={Donation}></Route>
         
       </IonRouterOutlet>
     </IonReactRouter>

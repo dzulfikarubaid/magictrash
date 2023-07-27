@@ -114,7 +114,7 @@ const Sell: React.FC = () => {
                 }
                 
                 {
-                    loading ? <button className='bg-slate-100 text-black p-2 rounded-lg mt-2' type='button'>Loading ...</button> : <button className='bg-black text-white p-2 rounded-lg mt-2' onClick={handleSubmit} type='button'>Donasi</button>
+                    loading ? <button className='bg-slate-100 text-black p-2 rounded-lg mt-2' type='button'>Loading ...</button> : <button className='bg-black text-white p-2 rounded-lg mt-2' onClick={handleSubmit} type='button'>Jual</button>
                 }
                 </form>
             </IonContent>
