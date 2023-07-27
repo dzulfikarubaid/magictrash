@@ -1,5 +1,5 @@
 import { Camera, CameraResultType } from '@capacitor/camera';
-import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonLoading, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import axios from 'axios';
 import { cloudUploadOutline } from 'ionicons/icons';
 import React, {useEffect, useState} from 'react';
@@ -90,8 +90,10 @@ const Donation: React.FC = () => {
                     
                     
                 }
+                {
+                    loading ? <button className='bg-slate-100 text-black p-2 rounded-lg mt-2' type='button'>Loading ...</button> : <button className='bg-black text-white p-2 rounded-lg mt-2' onClick={handleSubmit} type='button'>Donasi</button>
+                }
                 
-                <button className='bg-black text-white p-2 rounded-lg mt-2' onClick={handleSubmit} type='button'>Donasi</button>
                 </form>
             </IonContent>
         </IonPage>
