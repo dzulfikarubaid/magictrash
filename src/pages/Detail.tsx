@@ -131,8 +131,7 @@ const Detail: React.FC = () => {
                 </div>
                 </div>
                 <h1 className='font-bold  my-3'>Video Pemrosesan Produk</h1>
-                <video src={video} width="750" height="500" controls>
-                </video>
+                <iframe src="https://drive.google.com/file/d/1-JqWn_GRpO9WzOs-zLgqOTiNOoQWMC2U/preview" className='w-full h-[400px] mb-10' allow="autoplay"></iframe>
             </IonContent>
         </IonPage>
     );

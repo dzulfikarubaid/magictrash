@@ -120,17 +120,17 @@ function Start() {
                 </div>
                     <h1 id='layanan' className='font-semibold'>Layanan Magictrash</h1>
                     <p className='text-justify text-[10px]'  >Kamu bisa ngejual atau ngebeli produk bekas berkualitas dengan harga nyaman di kantong. Kamu juga bisa menyumbangkan barangmu agar bermanfaat kepada orang yang membutuhkan.</p>
-                    <div className='flex flex-col gap-5'>
-                    <div className='border-[1.5px] w-full p-2 h-[80px] rounded-xl'>
+                    <div className='flex flex-row gap-5'>
+                    <div className='border-[1.5px] w-full p-2  rounded-xl'>
                         <h1 className='text-[10px] p-2'>Foto barang bekasmu, konfirmasi ke admin, kurir akan menjemputmu dan membayar barangmu.</h1>
                       </div>
 
             
-                    <div className='border-[1.5px] w-full h-[80px] rounded-xl'>
+                    <div className='border-[1.5px] w-full rounded-xl'>
                         <h1 className='text-[10px] p-2'>Antar langsung barangmu ke tempat kami terdekat. Tanpa menunggu kurir dan proses cepat.</h1>
                         </div>
                   
-                    <div className='border-[1.5px] w-full h-[80px] rounded-xl'>
+                    <div className='border-[1.5px] w-full rounded-xl'>
                         <h1 className='text-[10px] p-2'>
                         Layanan donasi barang bekas yang diberikan kepada panti atau orang yang berkebutuhan.</h1>
                         </div>
@@ -139,8 +139,8 @@ function Start() {
                     
                     <div>
                       <h1 className='font-semibold text-center mb-3'>Kenapa Harus Pake Magictrash?</h1>
-                      <div className='flex gap-3 justify-center items-center'>
-                      <div className='border-[1.5px] w-[100px] h-[170px] rounded-xl text-[10px]'>
+                      <div className='flex gap-5 justify-center items-center'>
+                      <div className='border-[1.5px] w-full h-[170px] rounded-xl text-[10px]'>
                           <div className='p-2'>
                           <h1 className='mb-2 font-semibold'>Aman dan terpercaya</h1>
                           <p className=''>Kamu gak perlu khawatir karena seluruh proses bersifat transparan, aman, dan dapat dipercaya.</p>
@@ -148,7 +148,7 @@ function Start() {
                           </div>
                         
                         </div>
-                        <div className='border-[1.5px] w-[100px] h-[170px] rounded-xl text-[10px]'>
+                        <div className='border-[1.5px] w-full h-[170px] rounded-xl text-[10px]'>
                           <div className='p-2'>
                           <h1 className='mb-2 font-semibold'>Gratis Ongkir Pickup</h1>
                           <p className=''>Simple, gampang, fan nguntungin karena gratis ongkos kirim juga lhoo! Yuk, gausah pikir panjang lagi.</p>
@@ -156,7 +156,7 @@ function Start() {
                           </div>
                         
                         </div>
-                        <div className='border-[1.5px] w-[100px] h-[170px] rounded-xl text-[10px]'>
+                        <div className='border-[1.5px] w-full h-[170px] rounded-xl text-[10px]'>
                           <div className='p-2'>
                           <h1 className='mb-2 font-semibold'>Mudah & anti ribet</h1>
                           <p className=''>Proses jual beli barang sangat mudah</p>
@@ -170,7 +170,11 @@ function Start() {
                     </div>
                     <div className='text-center'>
                       <h1 className='font-semibold text-center mb-3'>Mekanisme Penjualan Barang</h1>
-                      <h1 className='font-semibold text-center mb-3' id='faq'>Frequently Asked Questions</h1>
+                      <div className='flex flex-col justify-center items-center mt-2'>
+                      <p className='text-center mb-2 text-[12px]'>Alur penjualan barang bekas di MagicTrash.ID</p>
+                      <img src="mekanisme.png" alt="" />
+                      </div>
+                      <h1 className='font-semibold text-center mb-3 mt-2' id='faq'>Frequently Asked Questions</h1>
                       {/* <div className='flex flex-col gap-3'>
                         <div className='rounded-xl w-fullpy-4 border-2'><h1 >Apa itu Magictrash?</h1></div>
                         <div className='rounded-xl w-fullpy-4 border-2'><h1 >Apa aja baju bekas yang diterima?</h1></div>
