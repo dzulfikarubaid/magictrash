@@ -131,7 +131,7 @@ const Detail: React.FC = () => {
                 </div>
                 </div>
                 <h1 className='font-bold  my-3'>Video Pemrosesan Produk</h1>
-                <video className='w-full h-[300px]' src={video}></video>
+                <video className='w-full h-[300px] mb-10' src={video} controls></video>
             </IonContent>
         </IonPage>
     );
