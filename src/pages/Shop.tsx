@@ -31,7 +31,7 @@ function Shop(){
     const [loaded, setLoaded] = useState(false)
     const [data, setData] = useState([])
     useEffect(() => {
-        axios.get('https://magictrash-api.vercel.app/').then((res) => {
+        axios.get('https://magictrash-api.vercel.app/api/').then((res) => {
             setData(res.data)
             setLoaded(true)
         })

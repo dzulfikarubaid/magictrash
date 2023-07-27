@@ -35,7 +35,7 @@ function Start() {
       }, 2000);
     }
     useEffect(() => {
-        axios.get('https://magictrash-api.vercel.app/').then((res) => {
+        axios.get('https://magictrash-api.vercel.app/api/').then((res) => {
             setData(res.data)
             setLoaded(true)
         })

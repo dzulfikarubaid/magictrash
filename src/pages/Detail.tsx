@@ -42,7 +42,7 @@ const Detail: React.FC = () => {
         }, 2000);
       }
     useEffect(() => {
-        axios.get(`https://magictrash-api.vercel.app/${id}/`).then((res) => {
+        axios.get(`https://magictrash-api.vercel.app/api/${id}/`).then((res) => {
             setData(res.data)
             setLoaded(true)
         })
@@ -109,6 +109,8 @@ const Detail: React.FC = () => {
                 <h1 className='line-through text-[12px]'>Rp{data.harga_asli}</h1>
                 <h1 className='font-bold'>Deskripsi Produk</h1>
                 <p>{data.body}</p>
+                <h1 className='font-bold'>Alasan Menjual</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas iste non aspernatur. Rerum ex libero molestiae reprehenderit veniam? Aliquid quibusdam molestias vitae nihil cum sed voluptates, laborum quas ipsum accusamus!</p>
                 </>
                 }
                 {
