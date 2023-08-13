@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonItemGroup, IonList, IonMenu, IonMenuButton, IonPage, IonRefresher, IonRefresherContent, IonSearchbar, IonSkeletonText, IonTitle, IonToolbar, RefresherEventDetail, } from '@ionic/react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -40,7 +40,15 @@ function Start() {
             setLoaded(true)
         })
     },[])
-  
+    const history = useHistory()
+    useEffect(() => {
+      if(window.screen.width >= 500){
+        
+        history.push('/web')
+        window.location.reload()
+      }
+
+    })
   return (
     <>
       <Menu></Menu>

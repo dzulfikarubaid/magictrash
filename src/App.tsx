@@ -23,7 +23,7 @@ import './theme/variables.css';
 import SignUp from './pages/SignUp';
 import Start from './pages/Start';
 import SignIn from './pages/SignIn';
-import Home from './pages/Home';
+import Home from './web/Home';
 import Tabs from './pages/Tabs';
 import AddPost from './pages/AddPost';
 import Profile from './pages/Profile';
@@ -57,6 +57,9 @@ const App: React.FC = () => (
         </Route>
         <Route path='/app'>
           <Tabs/>
+        </Route>
+        <Route path='/web'>
+          <Home/>
         </Route>
         <Route path={'/addpost'}>
           <AddPost></AddPost>
