@@ -80,23 +80,23 @@ const Detail: React.FC = () => {
                         <>
                         {
                         data.image1 ? <SwiperSlide >
-                        <img src={data.image1} className='hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover' alt="" />
+                        <img src={data.image1} className='object-contain ease-in duration-500 rounded-xl w-full h-[300px]' alt="" />
                         </SwiperSlide> : ''
                     }
                     {
-                        data.image2 ? <SwiperSlide><img src={data.image2} className='mb-10 hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover' alt="" />
+                        data.image2 ? <SwiperSlide><img src={data.image2} className='object-contain ease-in duration-500 rounded-xl w-full h-[300px]' alt="" />
                         </SwiperSlide> : ''
                     }
                     {
-                        data.image3 ? <SwiperSlide><img src={data.image3} className='hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover' alt="" />
+                        data.image3 ? <SwiperSlide><img src={data.image3}  className='object-contain ease-in duration-500 rounded-xl w-full h-[300px]' alt="" />
                         </SwiperSlide> : ''
                     }
                     {
-                        data.image4 ? <SwiperSlide><img src={data.image4} className='hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover' alt="" />
+                        data.image4 ? <SwiperSlide><img src={data.image4}  className='object-contain ease-in duration-500 rounded-xl w-full h-[300px]' alt="" />
                         </SwiperSlide> : ''
                     }
                     {
-                        data.image5 ? <SwiperSlide><img src={data.image5} className=' hover:object-contain ease-in duration-500 rounded-xl w-full h-[300px] object-cover' alt="" />
+                        data.image5 ? <SwiperSlide><img src={data.image5}  className='object-contain ease-in duration-500 rounded-xl w-full h-[300px]' alt="" />
                         </SwiperSlide> : ''
                     }</>
                 
@@ -110,7 +110,7 @@ const Detail: React.FC = () => {
                 <h1 className='font-bold'>Deskripsi Produk</h1>
                 <p>{data.body}</p>
                 <h1 className='font-bold'>Alasan Menjual</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas iste non aspernatur. Rerum ex libero molestiae reprehenderit veniam? Aliquid quibusdam molestias vitae nihil cum sed voluptates, laborum quas ipsum accusamus!</p>
+                <p>{data.alasan}</p>
                 </>
                 }
                 {
