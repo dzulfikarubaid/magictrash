@@ -2,13 +2,36 @@ import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import Navbar from './Navbar'
 import { IonIcon } from '@ionic/react'
-import { arrowBackCircleOutline, arrowBackOutline, arrowForwardCircle, arrowForwardCircleOutline, arrowForwardOutline, chevronDown, search, searchCircle, searchOutline } from 'ionicons/icons'
+import { arrowBackCircleOutline, arrowBackOutline, arrowForwardCircle, arrowForwardCircleOutline, arrowForwardOutline, chevronDown, chevronUp, search, searchCircle, searchOutline } from 'ionicons/icons'
 import axios from 'axios'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules'
 import Footbar from './Footbar'
 
+function FaqItem({ question, answer }:any) {
+    const [isOpen, setIsOpen] = useState(false);
+  
+    const toggleAnswer = () => {
+      setIsOpen(!isOpen);
+    };
+  
+    return (
+      <div className='w-[400px] flex flex-col gap-6'>
+        <button
+          className={`border-solid border-color7 border-2 p-2 px-3 rounded-full flex flex-row justify-between w-full items-center ${isOpen ? 'bg-gray-200' : ''}`}
+          onClick={toggleAnswer}
+        >
+          <h1>{question}</h1>
+          <IonIcon icon={isOpen ? chevronUp : chevronDown} />
+        </button>
+        {isOpen && (
+            <p className='text-left'>{answer}</p>
+        )}
+      </div>
+    );
+  }
 function Start() {
+    
     const [data, setData] = useState([])
     const [loaded, setLoaded] = useState(false)
     useEffect(() => {
@@ -25,6 +48,12 @@ function Start() {
       }
 
     })
+    function handleSearch(e:any){
+        e.preventDefault();
+        const query = e.target.elements.searchInput.value;
+        // Navigasi ke halaman pencarian dengan query sebagai parameter
+        history.push(`/shop?q=${query}`);
+    }
   return (
     <div>
         <Navbar></Navbar>
@@ -40,13 +69,12 @@ function Start() {
             Cari baju bekas termurah kualitas bagus</li>
             <li className='list-disc list-inside'>
             Transaksi aman dan terpercaya</li>
-            <form className='flex flex-row items-center'>
+            <form className='flex flex-row items-center' onSubmit={handleSearch}>
               <div className='border-2 rounded-full flex flex-row items-center p-1'>
                 <IonIcon className='px-2' size='large' icon={searchOutline}></IonIcon>
-              <input type="text" placeholder='Cari fashion kamu di sini!' className='rounded-full p-2 focus:outline-none'/>
-              <button className='bg-color7 p-2 rounded-full px-4 text-teks1'>Search</button>
+              <input type="text" name='searchInput' placeholder='Cari fashion kamu di sini!' className='rounded-full p-2 focus:outline-none'/>
+              <button type='submit' className='bg-color7 p-2 rounded-full px-4 text-teks1'>Search</button>
               </div>
-              
             </form>
             </div>
             <div className='w-1/2'>
@@ -135,24 +163,21 @@ function Start() {
                 <h1 className='font-bold text-xl text-teks1'>Frequently Asked Questions</h1>
                 <p className=' '>Masih ada yang ragu dan ada pertanyaan? 
                 Tenang, disini kami akan selalu ada!</p>
-                <div className='flex flex-row gap-10 justify-center items-center'>
-                    <div className='w-[400px] flex flex-col gap-6'>
-                        <button className='border-solid border-color7 border-2 p-2 px-3 rounded-full flex flex-row justify-between w-full'>
-                        <h1>Apa itu magictrash.id?</h1>
-                        <IonIcon icon={chevronDown}></IonIcon>
-                        </button>
-                        <button className='!border-2 border-color7 border-solid px-3 p-2 rounded-full flex flex-row justify-between w-full'>
-                        <h1>Apa aja baju bekas yang diterima?</h1>
-                        <IonIcon icon={chevronDown}></IonIcon>
-                        </button>
-                        <button className='!border-2 border-color7 border-solid px-3 p-2 rounded-full flex flex-row justify-between w-full'>
-                        <h1>Apa keunggulan magictrash?</h1>
-                        <IonIcon icon={chevronDown}></IonIcon>
-                        </button>
-                        <button className='!border-2 border-color7 border-solid px-3 p-2 rounded-full flex flex-row justify-between w-full'>
-                        <h1>Gimana cara menyumbangkan baju?</h1>
-                        <IonIcon icon={chevronDown}></IonIcon>
-                        </button>
+                <div className='flex flex-row gap-10 justify-center '>
+                    <div className='w-[400px] flex flex-col gap-6 py-20'>
+                    <FaqItem
+                        question="Apa itu magictrash.id?"
+                        answer="Tempat jual dan beli barang bekas terbaik nyaman di kantong, mulai dari fashion, sepatu, elektronik, peralatan penunjang kos, hingga kerajinan mahasiswa."
+                    />
+                    <FaqItem
+                        question="Apa aja baju bekas yang diterima?"
+                        answer="Kami menerima berbagai jenis baju bekas seperti kaos, kemeja, celana, dan lainnya dalam kondisi baik."
+                    />
+                    <FaqItem
+                        question="Apa keunggulan magictrash?"
+                        answer="Keunggulan magictrash antara lain adalah proses donasi yang mudah, lingkungan yang terjaga, dan dukungan untuk masyarakat yang membutuhkan."
+                    />
+                    <FaqItem question='Gimana cara menyumbangkan baju?' answer='Buka menu donasi kemudian masukkan keterangan barang yang ingin anda donasikan, tekan submit untuk mengirim, dan anda akan dihubungi oleh admin'></FaqItem>
                     </div>
                     <div>
                     <div className='rounded-full bg-gradient-radial from-color4 via-transparent opacity-80 to-transparent -z-10 absolute w-[500px] h-[500px]  '></div>
